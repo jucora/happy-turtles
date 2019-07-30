@@ -1,0 +1,18 @@
+JULIAN'S CODE:
+
+let options=[],  cont=0;
+    for(let i=0;i<keyboards.length;i++){
+        for(let j=0;j<drives.length;j++){
+            if(keyboards[i]+drives[j]<=b){
+                options[cont]= keyboards[i]+drives[j];
+                cont++;
+            }
+        }
+    }
+
+    if(Math.min.apply(null,options)<b && Math.min.apply(null,options) >0){
+        return Math.max.apply(null,options);
+    }
+    else{
+        return -1;
+    }
