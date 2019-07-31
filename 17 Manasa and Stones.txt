@@ -1,0 +1,26 @@
+
+// Complete the stones function below.
+function stones(n, a, b) {
+    
+    var stones = [];
+        if(a<b){
+                for(let j=0;j<n;j++){
+                    stones[j] = (n - 1 - j)*a + j*b;
+                }
+            }else if(a>b){
+                for(let j=0;j<n;j++){
+                    stones[j] = (n - 1 - j)*b + j*a;
+                }
+            }else{
+                li[0] = (n - 1)*b;
+                n = 1;
+            }
+        
+            for(let j=0;j<n;j++){
+                console.log(stones[j] + " ");
+            }
+            console.log("\n");
+        
+        return stones;
+    
+}
