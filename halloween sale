@@ -1,0 +1,14 @@
+Julian's code:
+
+let videoGame = 0;
+    
+    while (s >= p) { 
+        videoGame++;
+        s -= p; 
+        if (p - d > m) {p -= d;}
+        else {p = m;}
+    }
+    return videoGame;
+    
+    
+ 
