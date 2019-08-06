@@ -10,5 +10,25 @@ let videoGame = 0;
     }
     return videoGame;
     
+    Thaís's code: 
+    
+    function howManyGames(p, d, m, s) {
+    // Return the number of games you can buy
+    
+    let possibleBuy=0; 
+    
+    while (s>=p) { //while the total money(s) is greater than the price of the game(m):
+        s -= p; //the money(s) will be reduced by the price of the current game
+        possibleBuy++; //and one game will be added on the amount of games bought
+        
+        if ((p-d)>=m) { //if the 'price minus the discount' is greater or equal than minimum price(m)
+            p -= d; //the price will be reduced in d units;
+            
+        }else {
+            p=m; //minimum price;
+        }
+    }
+      return possibleBuy;
+}
     
  
