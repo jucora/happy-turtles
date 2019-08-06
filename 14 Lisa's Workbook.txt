@@ -1,0 +1,25 @@
+// Raymond
+// Complete the workbook function below.
+function workbook(n, k, arr) {
+   let specials = 0;
+   let page = 1;
+   arr.forEach(a =>{
+       let entry = 0;
+       let startQue = 0;
+       while( a > 0 ){
+           startQue = entry;
+           if(a >= k){
+               entry += k;
+           }else{
+               entry += (a % k);
+           }
+           a -= k;
+           if(page > startQue && page <= entry){
+               specials++
+           }
+           page++
+       }
+   });
+   return specials
+
+}

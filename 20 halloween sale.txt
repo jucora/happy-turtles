@@ -1,4 +1,4 @@
-Julian's code:
+﻿Julian's code:
 
 let videoGame = 0;
     
@@ -32,3 +32,19 @@ let videoGame = 0;
 }
     
  
+// Raymond
+function howManyGames(p, d, m, s) {
+    // Return the number of games you can buy
+    let count = 0;
+    let price = p;
+    let sum = 0;
+
+    while (sum <= s) {
+        sum += price;
+        count += sum <= s ? 1 : 0;
+        price = price - d > m ? price - d : m;
+    }
+
+    return count;
+
+}

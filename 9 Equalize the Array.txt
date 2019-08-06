@@ -1,0 +1,11 @@
+// Raymond
+// Complete the equalizeArray function below.
+function equalizeArray(arr) {
+    let countArr = Object.values(
+        arr.reduce((objCount, num) => {
+            objCount[num] = !objCount[num] ? 1 : objCount[num] + 1;
+            return objCount;
+        }, {})
+    );
+    return arr.length - Math.max(...countArr);
+}

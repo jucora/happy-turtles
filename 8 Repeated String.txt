@@ -1,0 +1,16 @@
+// Raymond
+// Complete the repeatedString function below.
+function repeatedString(s, n) {
+    let x = Math.floor(n / s.length); // amount of times the string s appears in the given length n of the infinite string
+    let count = (s.split("a").length - 1) * x; // hold the total amount of a's that are in the extended string
+    let rem = n % s.length; // remainder (amount of letters) found from dividing the given length n by the length of the string s.
+
+    // checks to see if the character at i is an "a". If it is an "a" we increment the variable count
+    for (let i = 0; i < rem; i++) {
+        if (s.charAt(i) === "a") {
+            count++;
+        }
+    }
+    return count;
+
+}

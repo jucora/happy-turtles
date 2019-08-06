@@ -1,0 +1,49 @@
+// Raymond
+function surfaceArea(A) {
+    
+    let solution = [];
+    for (let i = 0; i < A.length; i++){
+        for(let j = 0; j < A[i].length; j++) {
+            let surface = A[i][j] * 6
+            
+            if (A[i][j] != 1){
+                surface -= (A[i][j]-1) * 2
+            }
+            
+            if (A[i][j+1] != undefined) {
+                if (A[i][j] >= A[i][j+1]) {
+                    surface -= A[i][j+1]
+                } else {
+                    surface -= A[i][j]
+                }
+            }
+            
+            if (A[i][j-1] != undefined) {
+                if (A[i][j] >= A[i][j-1]) {
+                    surface -= A[i][j-1]
+                } else {
+                    surface -= A[i][j]
+                }
+            }
+
+            if ( A[i + 1] != undefined) {
+                if (A[i][j] >= A[i + 1][j]) {
+                    surface -= A[i+1][j]
+                } else {
+                    surface -= A[i][j]
+                }
+            }
+
+            if (A[i - 1] != undefined) {
+                if (A[i][j] >= A[i - 1][j]) {
+                    surface -= A[i-1][j]
+                } else {
+                    surface -= A[i][j]
+                }
+            }
+            
+        solution.push(surface);
+    }   
+  }
+    return solution.reduce((a,b)=> {return a + b})
+}

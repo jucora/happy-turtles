@@ -1,0 +1,16 @@
+// Raymond
+
+// Complete the chocolateFeast function below.
+function chocolateFeast(n, c, m) {
+    let result = 0;
+    let bought = parseInt(n / c); // number of chocolate bought
+    result += bought;
+ 
+    let wrappers = bought; // wrappers are equal to the number of chocolate bought
+    while(wrappers >= m) { // check condition to see how many bars he can get after returning wrappers
+        let freeChoco = parseInt(wrappers / m); // number of free chocolate bars
+        result += freeChoco;
+        wrappers = wrappers - freeChoco * m + freeChoco;
+    }
+    return result;
+}

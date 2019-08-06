@@ -1,0 +1,58 @@
+// Raymond 
+// Complete the happyLadybugs function below.
+function happyLadybugs(b) {
+    let game = []
+    
+    for (let i = 0; i < b.length; i++){
+        game.push(b[i])
+    }
+    
+    let sorted = game.sort()
+    let result = 'NO'
+    let space = false;
+    let aligne = true;
+    
+    for (let i = 0; i < sorted.length; i++){
+        if (sorted[i] !== '_') {
+            if (sorted[i + 1] == undefined && sorted[i - 1] == undefined) {
+                result = 'NO'
+                console.log(sorted[i])
+                return 'NO'
+            }
+            if (sorted[i] == sorted[i + 1] || sorted[i] == sorted[i - 1]) {
+                result = 'YES'
+                
+            } else {
+                result = 'NO'
+                
+                break
+            }
+        } else {
+            result = 'YES'
+        }
+        if (sorted[i] == '_') {
+            space = true
+        }
+    }
+    
+    for (let i = 0; i < b.length; i++){
+        if (space == false) {
+            if (b[i + 1] !== undefined || b[i - 1] !== undefined) {
+                if (b[i] !== b[i + 1] && b[i] !== b[i - 1]) {
+                    aligne = false;
+                    break
+                }
+            }  
+        }
+        
+    }
+    
+    if (space == false && aligne !== true) {
+        result = 'NO'
+    } else if (space == false && aligne == true) {
+        result = 'YES'
+    }
+     
+    return result
+
+}

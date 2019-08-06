@@ -1,0 +1,25 @@
+
+// Raymond
+function anagram(s) {
+    const stringLength = s.length;
+    
+    //If length of string is odd it can't be an anagram. Return -1.
+    if (stringLength % 2 !== 0) {
+        return -1;
+    }
+    
+    //split the string into two even pieces and store in an array
+    let compareStrings = [
+        s.substr(0, stringLength / 2),
+        s.substr(stringLength / 2)
+    ];
+
+    //try to find each letter of the first string in the second string. If the character is not found, replace those characters.
+    for (var i = 0; i < stringLength / 2; i++) {
+        if (compareStrings[1].indexOf[compareStrings[0][i]] !== -1) {
+            compareStrings[1] = compareStrings[1].replace(compareStrings[0][i], "");
+        }
+    }
+    return compareStrings[1].length;
+
+}

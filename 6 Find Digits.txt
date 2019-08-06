@@ -1,0 +1,14 @@
+// Raymond
+
+// Complete the findDigits function below.
+function findDigits(n) {
+  let d = 0;
+  let t = n.toString().split("");
+
+  t.forEach(digit => {
+    if (n % parseInt(digit) === 0) {
+      d++;
+    }
+  });
+  return d;
+}
