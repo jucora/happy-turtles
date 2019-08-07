@@ -1,0 +1,11 @@
+Julian's code:
+
+let j = s.length - 1;
+    for (let i = 0; i < j; i++) { 
+        if (s[i] !== s[j]) {
+            if (s[i + 1] === s[j] && s[i + 2] === s[j - 1]) {return i;}
+            if (s[j - 1] === s[i] && s[j - 2] === s[i + 1]) {return j;}
+        }
+        j--;
+    }
+    return -1; 
