@@ -3,18 +3,18 @@ class LinkedList
   attr_writer :list, :ind
   attr_accessor :list, :ind
   def initialize
-    $ind = 0
-    $list = []
-    $ind = $list.length
+    @ind = 0
+    @list = []
+    @ind = $list.length
   end
   
   def add(number)
-    $list[$ind]=number
-    $ind = $ind+1
+    @list[@ind]=number
+    @ind = @ind+1
   end
 
   def get(index)
-    $list[index]
+    @list[index]
   end
 end
 
